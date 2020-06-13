@@ -3,7 +3,7 @@
 
 include makefile.inc
 
-all : bn bn_lite gr grx ph layout1 layout2 reprod
+all : bn bn_lite gr grx ph layout1 layout2 reprod pairprod 
 misc : anm mum tlp glr layout0
 
 bn : bn.cpp\
@@ -54,6 +54,12 @@ reprod : reprod.cpp\
 	${PCTLINC}/pctl/plist.h
 	${CCPP} -o reprod -I${PCTLINC} ${CFLAGS} reprod.cpp
 
+pairprod : pairprod.cpp\
+	${PCTLINC}/acnh.h\
+	${PCTLINC}/pctl/pcontainer.h\
+	${PCTLINC}/pctl/plist.h
+	${CCPP} -o pairprod -I${PCTLINC} ${CFLAGS} pairprod.cpp
+
 layout0 : misc/layout0.cpp\
 	${PCTLINC}/acnh.h\
 	${PCTLINC}/pctl/pcontainer.h\
@@ -97,6 +103,7 @@ clean :
 	${RM} -f layout1
 	${RM} -f layout2
 	${RM} -f reprod 
+	${RM} -f pairprod
 	${RM} -f anm
 	${RM} -f mum
 	${RM} -f tlp
