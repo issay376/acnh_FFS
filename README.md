@@ -23,9 +23,9 @@ AC:NH Flower Field Simulator
         Special Thanks to all Dataminers, Analizers, Illustrators,
         and Site Managers, related the following sites and infomation.
 
-　・AC:NH Flower Mechanics Ultimate Chart (Twitter: @_ninji, @aiterusawato）
-　・Paleh's ACNH Flower Genetics Guide
-　・あつまれどうぶつの森攻略｜hyperWiki（https://hyperwiki.jp/acnh/flowergene/）
+　・AC:NH Flower Mechanics Ultimate Chart (Twitter: @_ninji, @aiterusawato）  
+　・Paleh's ACNH Flower Genetics Guide  
+　・あつまれどうぶつの森攻略｜hyperWiki（https://hyperwiki.jp/acnh/flowergene/）  
 
 
 ## ライセンス
