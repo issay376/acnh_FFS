@@ -19,7 +19,7 @@
 //	You should have received a copy of the GNU General Public License
 //	along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
- 
+
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
@@ -75,7 +75,7 @@ constexpr char const* const flowerTypeString( flowerType t )
 
 constexpr const char flowerTypeChar( flowerType t )
 {
-	constexpr const char 	c[ 11 ] = { '-', 'R', 'H', 'L', 'A', 'P', 'C', 'M', 'T', 'G', 'W' };
+	const char 	c[ 11 ] = { '-', 'R', 'H', 'L', 'A', 'P', 'C', 'M', 'T', 'G', 'W' };
 	return c[ t ];
 }
 
@@ -234,7 +234,9 @@ const gene gGlRose = 0x00;
 
 class rose : public flower
 {
-	static constexpr flowerColor color[ 81 ] = {
+	static constexpr flowerColor color( unsigned n )
+	{
+		const flowerColor c[ 81 ] = {
                                       Wh, Wh, Wh, Rd, Pk, Wh, Bk, Rd, Pk,
                                       Ye, Ye, Ye, Or, Ye, Ye, Or, Or, Ye,
                                       Ye, Ye, Ye, Or, Ye, Ye, Or, Or, Ye,
@@ -244,10 +246,12 @@ class rose : public flower
                                       Pu, Pu, Pu, Rd, Pk, Pu, Bk, Rd, Pk,
                                       Pu, Pu, Pu, Rd, Pk, Pu, Bk, Rd, Pu,
                                       Wh, Wh, Wh, Rd, Pk, Wh, Bu, Rd, Wh
+		};
+		return c[ n ];
 	};
 
 	rose( gene g, growth growth, bool clone, bool golden )
-		: flower( Ro, g, golden ? Gl : color[ flower_no( g ) ], growth, clone ) { }
+		: flower( Ro, g, golden ? Gl : color( flower_no( g )), growth, clone ) { }
 
     public:
 	~rose() { }
@@ -311,13 +315,17 @@ const gene gBuHyacinth = 0x07;		// Island
 
 class hyacinth : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Rd, Rd, Ye, Or, Bu, Ye, Or, Pu,
 					Wh, Pk, Rd, Ye, Ye, Rd, Ye, Ye, Pu,
 					Bu, Wh, Rd, Wh, Ye, Rd, Ye, Ye, Pu
+                };
+                return c[ n ];
 	};
 
-	hyacinth( gene g, growth growth, bool clone ) : flower( Hy, g, color[ flower_no( g ) ], growth, clone ) { }
+	hyacinth( gene g, growth growth, bool clone ) : flower( Hy, g, color( flower_no( g )), growth, clone ) { }
 
     public:
 	~hyacinth() { }
@@ -353,13 +361,17 @@ const gene gOrLily = 0x1F;		// Island
 
 class lily : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Rd, Bk, Ye, Or, Bk, Ye, Or, Or,
 					Wh, Pk, Rd, Wh, Ye, Rd, Ye, Ye, Or,
 					Wh, Wh, Pk, Wh, Ye, Pk, Wh, Ye, Wh
+                };
+                return c[ n ];
 	};
 
-        lily( gene g, growth growth, bool clone ) : flower( Li, g, color[ flower_no( g ) ], growth, clone ) { }
+        lily( gene g, growth growth, bool clone ) : flower( Li, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~lily() { }
@@ -395,13 +407,17 @@ const gene gBuAnemone = 0x31;		// Island
 
 class anemone : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Rd, Rd, Or, Pk, Rd, Or, Or, Pk,
 					Wh, Rd, Rd, Or, Pk, Rd, Or, Or, Pk,
 					Bu, Bu, Pu, Bu, Pk, Pu, Or, Or, Pu
+                };
+                return c[ n ];
 	};
 
-        anemone( gene g, growth growth, bool clone ) : flower( An, g, color[ flower_no( g ) ], growth, clone ) { }
+        anemone( gene g, growth growth, bool clone ) : flower( An, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~anemone() { }
@@ -437,13 +453,17 @@ const gene gYRPansie = 0x1F;		// Island
 
 class pansie : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Rd, Rd, Ye, YR, Rd, Ye, Ye, YR,
 					Wh, Rd, Rd, Ye, YR, Rd, Ye, Ye, YR,
 					Bu, Bu, Pu, Bu, YR, Pu, Ye, Ye, Pu
+                };
+                return c[ n ];
 	};
 
-        pansie( gene g, growth growth, bool clone ) : flower( Pa, g, color[ flower_no( g ) ], growth, clone ) { }
+        pansie( gene g, growth growth, bool clone ) : flower( Pa, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~pansie() { }
@@ -479,13 +499,17 @@ const gene gOrCosmos = 0x17;		// Island
 
 class cosmos : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Pk, Rd, Ye, Or, Or, Ye, Or, Bk,
 					Wh, Pk, Rd, Ye, Or, Or, Ye, Or, Bk,
 					Wh, Pk, Rd, Wh, Pk, Rd, Ye, Or, Rd
+                };
+                return c[ n ];
 	};
 
-        cosmos( gene g, growth growth, bool clone ) : flower( Co, g, color[ flower_no( g ) ], growth, clone ) { }
+        cosmos( gene g, growth growth, bool clone ) : flower( Co, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~cosmos() { }
@@ -521,13 +545,17 @@ const gene gPkMum = 0x35;		// Island
 
 class mum : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Pk, Rd, Ye, Ye, Pu, Ye, Pu, Gr,
 					Wh, Pk, Rd, Ye, Rd, Pu, Ye, Pu, Gr,
 					Pu, Pk, Rd, Wh, Pk, Rd, Ye, Pu, Rd
+                };
+                return c[ n ];
 	};
 
-        mum( gene g, growth growth, bool clone ) : flower( Ch, g, color[ flower_no( g ) ], growth, clone ) { }
+        mum( gene g, growth growth, bool clone ) : flower( Ch, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~mum() { }
@@ -564,13 +592,17 @@ const gene gBkTulip = 0x07;		// Island
 
 class tulip : public flower
 {
-	static constexpr flowerColor color[ 27 ] = {
+	static constexpr flowerColor color( unsigned n )
+        {
+                const flowerColor c[ 27 ] = {
 					Wh, Rd, Bk, Ye, Or, Bk, Ye, Or, Pu,
 					Wh, Pk, Rd, Ye, Ye, Rd, Ye, Ye, Pu,
 					Wh, Wh, Rd, Wh, Ye, Rd, Ye, Ye, Pu
+                };
+                return c[ n ];
 	};
 
-        tulip( gene g, growth growth, bool clone ) : flower( Tu, g, color[ flower_no( g ) ], growth, clone ) { }
+        tulip( gene g, growth growth, bool clone ) : flower( Tu, g, color( flower_no( g )), growth, clone ) { }
         
     public:
         ~tulip() { }
