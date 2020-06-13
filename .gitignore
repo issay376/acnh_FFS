@@ -30,3 +30,28 @@
 *.exe
 *.out
 *.app
+
+# acnh_FHS local
+kup.sh
+bn
+bn_lite
+ph
+gr
+grx
+layout1
+layout2
+reprod
+mum
+anm
+tlp
+glr
+layout0
+misc/*.bk
+misc/*.debug
+misc/*.xls
+
+# for Mac and vi
+*.dSYM/
+*.DS_Store
+*.swp
+
