@@ -95,7 +95,7 @@ constexpr unsigned hybrid_ratio( watered w, visitor v )
 	return visitor_bonus[ v ] + (( w < 3 ) ? 5 : ( w - 2 ) * 5 );
 }
 
-// flower glowth
+// flower growth
 // -----------------------------------------------------------------------------
 typedef unsigned char		growth;		// 0 .. 3
 
