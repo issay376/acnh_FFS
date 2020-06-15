@@ -75,7 +75,7 @@ constexpr char const* const flowerTypeString( flowerType t )
 
 constexpr const char flowerTypeChar( flowerType t )
 {
-	const char 	c[ 11 ] = { '-', 'R', 'H', 'L', 'A', 'P', 'C', 'M', 'T', 'G', 'W' };
+	const char 	c[ 10 ] = { '-', 'R', 'H', 'L', 'A', 'P', 'C', 'M', 'T', 'W' };
 	return c[ t ];
 }
 
