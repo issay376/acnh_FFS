@@ -348,7 +348,7 @@ AC:NH Flower Field Simulator
 ## 構成ファイル
 
         ./                              導入ディレクトリ
-        ./acnh.h                        ユーティリティ
+        ./include/acnh.h                ユーティリティ
         ./include/pctl/plist.h          生ポインタ用のシングルリンクリスト・コンテナ
         ./include/pctl/pcontainer.h
         ./makefile                      サンプル・シミュレーターのメークファイル
@@ -368,7 +368,8 @@ AC:NH Flower Field Simulator
 
 ## 導入
 
-        acnh_FFS.tgz をダウンロードし、適当なディレクトリをつくって、そこに展開してください。
+        リポジトリをクローンするか、acnh_FFS.tgz をダウンロードし、適当なディレクトリを
+        つくって、そこに展開してください。
         
         C++ は ClangまたはGCCを想定しています。
         必要に応じて makefile.inc を編集してください。
