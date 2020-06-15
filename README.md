@@ -177,7 +177,7 @@ AC:NH Flower Field Simulator
         半分はRed(1010)になってしまうため、1段階多いものの確実にRed(1110)がつくれる方法を採用
         しています。
 
-                1: Wh_ x Wh_ -> Pu                      // 25%
+                1: Wh_ x Wh_ -> Pu1                     // 25%
                 2: Rd_ x Rd_ -> Bk2                     // 25%
                 3: Pu1 x Bk2 -> Rd3                     // 100%
                 4: Ye_ x Rd3 -> Rd4                     // 25%
